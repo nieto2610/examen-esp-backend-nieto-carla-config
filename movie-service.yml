@@ -4,7 +4,14 @@ server:
 spring:
   application:
     name: movie-service
-   datasource:
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+  zipkin:
+    baseUrl: http://localhost:9411/
+  datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3307/movie-dev
     username: usr-movie
@@ -24,5 +31,7 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+
 
 
